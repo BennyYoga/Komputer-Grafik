@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Week 3/Week 3 taks 7.gd" type="Script" id=1]
+[ext_resource path="res://Font/Poco.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+extra_spacing_top = -15
+font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 550, 322 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 503.0 ]
+}
+
+[node name="Next" type="Button" parent="."]
+anchor_left = 0.888
+anchor_top = 0.876
+anchor_right = 0.888
+anchor_bottom = 0.876
+margin_left = -56.3121
+margin_top = -22.6
+margin_right = 56.6879
+margin_bottom = 22.4
+custom_fonts/font = SubResource( 1 )
+text = "Next"
+
+[node name="Back" type="Button" parent="."]
+anchor_left = 0.111
+anchor_top = 0.881
+anchor_right = 0.111
+anchor_bottom = 0.881
+margin_left = -56.664
+margin_top = -22.6
+margin_right = 56.336
+margin_bottom = 22.4
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+script = SubResource( 2 )
+
+[connection signal="draw" from="." to="." method="_on_Control_draw"]
+[connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

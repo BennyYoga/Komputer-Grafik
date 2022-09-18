@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://MainPage/Assets/bulkhead-wallsx1.png" type="Texture" id=1]
+[ext_resource path="res://Font/Poco.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://MainPage/Control.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 141
+extra_spacing_top = -46
+font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="DynamicFont" id=4]
+size = 44
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+extra_spacing_top = -20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+extra_spacing_bottom = -9
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.392
+anchor_right = 0.5
+anchor_bottom = 0.392
+margin_left = -375.0
+margin_top = -64.2
+margin_right = 374.0
+margin_bottom = 63.8
+custom_fonts/font = SubResource( 1 )
+text = "SILAT PURBA"
+script = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -368.5
+margin_top = -22.0
+margin_right = 346.5
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 4 )
+text = "Choose and Looks in the that Scene"
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.11
+anchor_top = 0.807
+anchor_right = 0.11
+anchor_bottom = 0.807
+margin_left = -74.64
+margin_top = -28.2
+margin_right = 75.36
+margin_bottom = 28.8
+rect_pivot_offset = Vector2( -321, -418 )
+custom_fonts/font = SubResource( 2 )
+text = "Week 2"
+
+[node name="Week3" type="Button" parent="."]
+anchor_left = 0.286
+anchor_top = 0.806
+anchor_right = 0.286
+anchor_bottom = 0.806
+margin_left = -74.864
+margin_top = -28.6001
+margin_right = 75.136
+margin_bottom = 28.3999
+rect_pivot_offset = Vector2( -321, -418 )
+custom_fonts/font = SubResource( 2 )
+text = "Week 3"
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.133
+anchor_top = 0.069
+anchor_right = 0.133
+anchor_bottom = 0.069
+margin_left = -119.192
+margin_top = -29.4
+margin_right = 119.808
+margin_bottom = 29.6
+custom_fonts/font = SubResource( 5 )
+text = "Benny Yoga Project
+with the Version week.03"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Week3" to="." method="_on_Week3_pressed"]
+[connection signal="pressed" from="Week3" to="." method="_on_Button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Masuk_game/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/bulkhead-wallsx3.png" type="Texture" id=2]
+
+[node name="Masuk_game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1056.0
+margin_bottom = 672.0
+texture = ExtResource( 2 )
+
+[node name="Area2D" parent="." instance=ExtResource( 1 )]
